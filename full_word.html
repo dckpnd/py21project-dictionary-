@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<p><b> {{go_back}} </b></p>
+
+<form action="/full_results" method="get">
+    <p>Введите точную форму:</p>
+    <p><input type = 'text' name = 'nmfull' ></p>
+    <p><input type = 'submit' value = 'submit' ></p>
+
+</form>
+
+{% for answer in answers %}
+
+    <b><p>{{ answer }}:</p></b>
+        {% for part in answers[answer].split(';') %}
+            <p>{{part}}</p>
+        {% endfor %}
+    <hr>
+
+{% endfor %}
+
+{% endblock %}
