@@ -11,3 +11,11 @@ with open("slovar.txt", "r", encoding="utf-8") as file:
             new_5 = re.sub(r'\?\?\?', 'д', new_4)
             #print(new_5)
             file_new.write(new_5)
+            
+with open("slovar_new.txt", "r", encoding="utf-8") as file:
+    data = file.read()
+newnew_slovar = re.sub("a", "а" , data)
+
+with open ('newnew_slovar.txt', 'w', encoding ='utf-8') as filik:
+    for i in newnew_slovar:
+        filik.write(i)      
