@@ -32,12 +32,9 @@ with open("newnew_slovar.txt", "r", encoding="utf-8") as file:
 new_dict_word = {}
 for key, val in dict_word.items():
     if len(val) > 1:
-        # print(val)
         value_new = ""
         n = 1
         for item in val:
-            #print(item)
-
             value_new += str(n) + ". " + str(item) + "; "
             n += 1
         new_dict_word[key] = value_new
