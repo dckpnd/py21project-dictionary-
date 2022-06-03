@@ -41,6 +41,5 @@ for key, val in dict_word.items():
             value_new += str(n) + ". " + str(item) + "; "
             n += 1
         new_dict_word[key] = value_new
-        #print(new_dict_word[key])
     else: new_dict_word[key] = str(val[0])
-#print(new_dict_word)
+        
