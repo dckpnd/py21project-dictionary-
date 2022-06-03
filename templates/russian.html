@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %} {% endblock %}
+
+{% block content %}
+
+<p><b> {{ tw }} </b></p>
+
+<form action="/rus_results" method="get">
+    <p>Введите русское слово, для котрого хотите найти перевод:</p>
+    <p><input type = 'text' name = 'rw' ></p>
+    <p><input type = 'submit' value = 'Найти' ></p>
+
+    <b><h4>{{ concrete }}</h4></b>
+
+    {% for slovo in res %}
+
+    <b><p>{{ slovo }}:</p></b>
+        {% for part in res[slovo].split(';') %}
+            <p>{{part}}</p>
+        {% endfor %}
+    <hr>
+    {% endfor %}
+
+    <b><h4>{{ r2 }}</h4></b>
+
+    {% for slovo in res2 %}
+
+    <b><p>{{ slovo }}:</p></b>
+        {% for part in res2[slovo].split(';') %}
+            <p>{{part}}</p>
+        {% endfor %}
+    <hr>
+    {% endfor %}
+
+</form>
+{% endblock %}
