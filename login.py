@@ -20,7 +20,7 @@ def rus_tr():
 @app.route("/rus_results")
 def search_rus():
     word = request.args
-        if (word['rw'] != " ") & (word['rw'] != ""):
+    if (word['rw'] != " ") & (word['rw'] != ""):
         if (rus_concrete(word['rw']) != None) & (rus_2(word['rw']) != None):
             return render_template('russian.html', res = rus_concrete(word['rw']), res2 = rus_2(word['rw']), concrete = 'Точные совпадения:', r2 = 'Слова, содержащие ваш запрос:')
         elif (rus_concrete(word['rw']) != None) & (rus_2(word['rw']) == None):
